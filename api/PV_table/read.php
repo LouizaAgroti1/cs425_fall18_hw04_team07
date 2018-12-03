@@ -52,7 +52,7 @@
     }
 
     // Turn to JSON & output
-    echo json_encode($pv_arr);
+    //echo json_encode($pv_arr);
 
   } else {
     // No PV Systems
@@ -60,3 +60,41 @@
       array('message' => 'No PV Systems Found')
     );
   }
+
+$jsonData =json_encode($pv_arr);
+$original_data = json_decode($jsonData, true);
+$features = array();
+foreach($original_data as $key => $value) {
+    $features[] = array(
+        'type' => 'Feature',
+        'properties' => array('ID' => $value['ID'],
+                              'Name' => $value['Name'],
+                              'Photo' => $value['Photo'],
+                              'Address' => $value['Address'],
+                              'Operator' => $value['Operator'],
+                              'CommissionDate' => $value['CommissionDate'],
+                              'Description' => $value['Description'],
+                              'SystemPower' => $value['SystemPower'],
+                              'AnnualProduction' => $value['AnnualProduction'],
+                              'CO2Avoided' => $value['CO2Avoided'],
+                              'Reimbursement' => $value['Reimbursement'],
+                              'SolarPanelModules' => $value['SolarPanelModules'],
+                              'AzimuthAngle' => $value['AzimuthAngle'],
+                              'InclinationAngle' => $value['InclinationAngle'],
+                              'Communication' => $value['Communication'],
+                              'Inverter' => $value['Inverter'],
+                              'Sensors' => $value['Sensors']
+                            ),
+        'geometry' => array(
+             'type' => 'Point', 
+             'coordinates' => array($value['Coordinate_X'],
+                                    $value['Coordinate_Y'],  
+                                  ),
+         ),
+    );
+}
+
+$final_data = json_encode($features);
+echo $final_data;
+
+?>
