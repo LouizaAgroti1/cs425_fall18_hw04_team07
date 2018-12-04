@@ -2,7 +2,7 @@
   class PV_Table {
     // DB stuff
     private $conn;
-    private $table = 'pv_table';
+    private $table = 'PV_Table';
 
     // PV System's Properties
     public $ID;
