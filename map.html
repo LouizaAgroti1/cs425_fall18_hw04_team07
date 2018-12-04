@@ -22,6 +22,17 @@
 </head>
 
 <body>
+    <header>
+
+        <nav class="navbar fixed-top navbar-expand-sm bg-dark navbar-dark">
+            <form class="navbar-form pull-right">
+                <span style="padding-right: 20px;"><a class='btn btn-primary btn-small' data-toggle="modal" href="#add"><i
+                            class="icon-plus-sign icon-white"></i> Add PV System to the map</a></span>
+                <span><a class='btn btn-danger btn-small' data-toggle="modal" href="#modalDelete"><i class="icon-minus-sign icon-white"></i>
+                        Remove PV System from the map</a></span>
+            </form>
+        </nav>
+    </header>
     <div id="mapid"></div>
     <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -98,8 +109,30 @@
                         <input type="text" id="Sensors" class="form-control validate">
                     </div>
                 </div>
+                <!-- <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-default">Delete</button>
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Delete PV System</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div>
+                        <label for="Name">ID</label>
+                        <input type="text" id="ID" class="form-control validate">
+                    </div>
+                </div>
                 <div class="modal-footer d-flex justify-content-center">
-                    <button class="btn btn-default">Login</button>
+                    <button class="btn btn-default" onclick="delete_PV_System()">Submit</button>
                 </div>
             </div>
         </div>
@@ -179,6 +212,21 @@
             // TODO: Format Latitude and Longitude
             return latlng;
         }
+
+        function delete_PV_System() {
+            var ID='ID='+$("#ID").val();
+            $.ajax({
+                type: "DELETE",
+                url: "/pv_system/api/pv_table/delete.php",
+                data: ID,
+                success: function (response) {
+                    console.log(response);
+                }, error: function (response) {
+                    console.log(response);
+                }
+            });
+        }
+
 
     </script>
 </body>
