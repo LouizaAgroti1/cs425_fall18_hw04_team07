@@ -51,9 +51,6 @@
       array_push($pv_arr, $pv_item);
     }
 
-    // Turn to JSON & output
-    //echo json_encode($pv_arr);
-
   } else {
     // No PV Systems
     echo json_encode(
@@ -96,5 +93,4 @@ foreach($original_data as $key => $value) {
 
 $final_data = json_encode($features);
 echo $final_data;
-
 ?>

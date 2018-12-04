@@ -43,4 +43,5 @@
   );
 
   // Make JSON
-  print_r(json_encode($pv_table));
+  echo json_encode($pv_table);
+  ?>
