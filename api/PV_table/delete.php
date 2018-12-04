@@ -23,11 +23,11 @@
   // Delete PV System
   if($pv_table->delete()){
       echo json_encode(
-          array('message' => 'Post Deleted')
+          array('message' => 'PV System Deleted')
       );
   }else{
     echo json_encode(
-        array('message' => 'Post Not Deleted')
+        array('message' => 'PV System Not Deleted')
     );
   }
 

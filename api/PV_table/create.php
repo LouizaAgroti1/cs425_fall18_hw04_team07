@@ -39,11 +39,11 @@
 
   if($pv_table->create()){
       echo json_encode(
-          array('message' => 'Post Created')
+          array('message' => 'PV System Created')
       );
   }else{
     echo json_encode(
-        array('message' => 'Post Not Created')
+        array('message' => 'PV System Not Created')
     );
   }
 

@@ -17,7 +17,7 @@
 
   // Get raw data
   $data = json_decode(file_get_contents("php://input"));
-
+  
   $pv_table->ID = $data->ID;
   $pv_table->Name = $data->Name;
   $pv_table->Photo = $data->Photo;
@@ -40,11 +40,11 @@
 
   if($pv_table->update()){
       echo json_encode(
-          array('message' => 'Post Updated')
+          array('message' => 'PV System Updated')
       );
   }else{
     echo json_encode(
-        array('message' => 'Post Not Updated')
+        array('message' => 'PV System Not Updated')
     );
   }
 
