@@ -1,10 +1,10 @@
 <?php 
   class Database {
     // DB Params
-    private $host = 'localhost';
-    private $db_name = 'pv system';
-    private $username = 'root';
-    private $password = '';
+    private $host = '34.215.157.198';
+    private $db_name = 'PV System';
+    private $username = 'admin';
+    private $password = '1234';
     private $conn;
     // DB Connect
     public function connect() {
