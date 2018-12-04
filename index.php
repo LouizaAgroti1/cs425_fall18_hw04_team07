@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<script src="sweetalert2.all.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-	<link rel="shortcut icon" href="baseline_location_on_black_18dp.png" type="image/x-icon" />
 	<link rel="stylesheet" href="sweetalert2.min.css">
 	<link rel="stylesheet" type="text/css" href="index_style.css">
 </head>
