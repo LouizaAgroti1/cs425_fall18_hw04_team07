@@ -232,7 +232,7 @@
 
         $.ajax({
             type: "GET",
-            url: "/pv_system/api/pv_table/read.php",
+            url: "read.php",
             dataType: "json",
             success: function (response) {
                 console.log(response);
@@ -315,7 +315,7 @@
             var test = getUrlVars(inputID);
             $.ajax({
                 type: "DELETE",
-                url: "/pv_system/api/pv_table/delete.php",
+                url: "delete.php",
                 data: test,
                 ContentType: "application/json",
                 success: function (response) {
@@ -363,7 +363,7 @@
             var test = getUrlVars(dataString);
             $.ajax({
                 type: "POST",
-                url: "/pv_system/api/pv_table/create.php",
+                url: "create.php",
                 data: test,
                 ContentType: "application/json",
                 success: function (response) {
@@ -413,7 +413,7 @@
             var test = getUrlVars(dataString);
             $.ajax({
                 type: "PUT",
-                url: "/pv_system/api/pv_table/update.php",
+                url: "update.php",
                 data: test,
                 ContentType: "application/json",
                 success: function (response) {
