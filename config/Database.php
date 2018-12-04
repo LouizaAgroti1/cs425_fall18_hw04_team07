@@ -1,7 +1,7 @@
 <?php 
   class Database {
     // DB Params
-    private $host = '34.215.157.198';
+    private $host = 'localhost';
     private $db_name = 'PV System';
     private $username = 'admin';
     private $password = '1234';
